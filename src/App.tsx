@@ -1,8 +1,10 @@
-import { useTimeout } from "./Hooks/useTimeout";
+import { useFetch } from "./Hooks/useFetch";
 
 function App() {
-    const { show } = useTimeout(5000);
-    return <>{show ? <div>Hello there!</div> : <div>Sorry!</div>}</>;
+    const { loading, data, error } = useFetch(
+        "http://jsonplaceholder.typicode.com/posts"
+    );
+    return <></>;
 }
 
 export default App;
